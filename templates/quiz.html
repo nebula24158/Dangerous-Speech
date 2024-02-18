@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Dangerous Speech</title>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style_2.css">
+<link rel="stylesheet" href="https://fonts.google.com/specimen/Rubik+Mono+One&display=swap">
+<script src="https://www.w3schools.com/lib/w3.js"></script>
+
+<style>
+
+body,h1,h2,h3,h4,h5,h6 {font-family: "Kanit", sans-serif}
+h2{
+  font-size: 20px;
+}
+ 
+body, html {
+
+  height: 100%;
+
+  line-height: 1.8;
+
+}
+ 
+/* Full height image header */
+
+.bgimg-1 {
+
+  background-position: center;
+
+  background-size: cover;
+
+  background-color: #FFF2D8;
+
+  min-height: 100%;
+
+}
+ 
+
+.w3-bar .w3-button {
+
+  padding: 16px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+ 
+<!-- Navbar (sit on top) -->
+<header>
+<div class="w3-top">
+
+  <div class="w3-bar w3-white w3-card" id="myNavbar">
+
+    <a href="#home" class="w3-bar-item w3-button w3-wide">LOGO</a>
+
+    <!-- Right-sided navbar links -->
+
+    <div class="w3-right w3-hide-small">
+
+      <a href="E:\dangerousspeech\firstweb.html" class="w3-bar-item w3-button">INTRODUCTION</a>
+
+      <a href="E:\dangerousspeech\quiz.html" class="w3-bar-item w3-button"><i class="fa fa-user"></i> QUIZ TEST</a>
+
+      <a href="#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> CONTACT</a>
+
+    </div>
+
+    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+ 
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+
+      <i class="fa fa-bars"></i>
+
+    </a>
+
+  </div>
+
+</div>
+ 
+<!-- Sidebar on small screens when clicking the menu icon -->
+
+<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
+
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
+
+  <a href="E:\dangerousspeech\firstweb.html" onclick="w3_close()" class="w3-bar-item w3-button">INTRODUCTION</a>
+
+  <a href="#team" onclick="w3_close()" class="w3-bar-item w3-button">TEAM</a>
+
+  <a href="#work" onclick="w3_close()" class="w3-bar-item w3-button">WORK</a>
+
+  <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">CONTACT</a>
+
+</nav>
+</header>
+ 
+  <div class="bgimg-1 w3-display-container w3-grayscale-min quiz-slider" id="home">
+    <!-- list question -->
+    <div class = "list">
+      <div class = "item active">
+        <div class = "content">
+          <h2>คุณเคยใช้ถ้อยคำที่สร้างความเกลียดชัง (Hate Speech) หรือถ้อยคำที่เป็นอันตราย (Dangerous Speech) ในสื่อสังคมออนไลน์หรือไม่?</h2>
+        </div>
+      </div>  
+      <div class = "item">
+        <div class = "content">
+          <h2>เข้าใจความต่างของ Hate Speech และ Dangerous Speech</h2>
+          <p> Hate Speech หรือถ้อยคำแห่งความเกลียดชัง หมายถึงคำพูดและการแสดงออกที่ลดทอนความเป็นมนุษย์ ตีตรา ด้อยค่า ผลิตซ้ำอคติต่อกลุ่มบุคคล รวมไปถึงปฏิเสธการอยู่ร่วมกันกับบุคคลหรือกลุ่มที่มีลักษณะ หรืออัตลักษณ์ที่แตกต่างออกไป</p>
+          <p> ในขณะที่ Dangerous Speech หมายถึงถ้อยคำอันตรายมีลักษณะยุยง หรือส่งเสริมให้มีการใช้ความรุนแรงทางกายภาพ รวมถึงถ้อยคำที่สร้างความชอบธรรมกับการใช้ความรุนแรงต่อกลุ่มเป้าหมาย</p>
+        </div>  
+      </div>
+      <div class = "item">
+        <div class = "content">
+          <h2>คุณเคยเข้าไปแสดงความคิดเห็นไม่พอใจ จากกรณีที่ Disney เปิดตัวนักแสดงนำผิวสี ซึ่งต่างออกไปจากฉบับแอนิเมชันที่นางเงือกมีผิวขาวหรือไม่?</h2>
+        </div>  
+      </div>
+      <div class = "item">
+        <div class = "content">
+          <h2>การแสดงความคิดเห็นโดยไม่ใช้ถ้อยคำรุนแรงถือเป็นการสร้างความเกลียดชังไหม?</h2>
+          <p> ข้อความที่ยกมาข้างต้นอาจไม่เป็นข้อความแสดงความเกลียดชังโดยตรง แต่แสดงให้เห็นอคติและการตัดสินคุณค่าว่าคนกลุ่มใดกลุ่มหนึ่งมีความเหมาะสมที่จะทำหรือไม่ทำอะไร</p>
+          <p> อคติทางชาติพันธุ์ ศาสนา เพศ ความคิด ความเชื่อทางการเมือง ความพิการ คือรากฐานของปัญหาการใช้ถ้อยคำที่สร้างความเกลียดชัง หรือถ้อยคำอันตราย</p>
+        </div>  
+      </div>
+      <div class = "item">
+        <div class = "content">
+          <h2>คุณเคยเขียนข้อความที่มีลักษณะเหมารวมกลุ่มบุคคลแล้วห้อยท้ายว่า not all เพื่อลดความรุนแรงของข้อความหรือไม่?</h2>
+        </div>  
+      </div>
+      <div class = "item">
+        <div class = "content">
+          <h2>การใส่ "Not All" ช่วยลดการเหมารวมได้จริงหรือ?</h2>
+          <p> การใส่คำว่า not all เพื่อที่จะบอกว่าข้อความนี้ไม่ได้เหมารวมถึงทุกคนเป็นเพียงการสร้างความชอบธรรมให้กับการโพสต์ข้อความเกลียดชัง</p>
+          <p> อย่างไรก็ตาม เนื้อหาของข้อความไม่ได้ลดทอนอคติหรือความชิงชังต่อกลุ่มบุคคล</p>
+        </div>  
+      </div>
+      <div class = "item">
+        <div class = "content">
+          <h2>คุณเคยใช้ถ้อยคำ เช่น ‘วิปริต’ ‘ผิดเพศ’ ‘ลักเพศ’ ‘เบี่ยงเบน’ ‘พวกสำส่อน’ ‘ผิดปกติ’ ในการเรียกผู้มีความหลากหลายทางเพศหรือไม่?</h2>
+        </div>  
+      </div>
+      <div class = "item">
+        <div class = "content">
+          <h2>ทำไมเราถึงไม่ควรเรียกกลุ่มคนหลากหลายทางเพศด้วยคำเหล่านี้?</h2>
+          <p> ถ้อยคำเหล่านี้มีลักษณะของการเหมารวมตีตรากลุ่มบุคคล ดูหมิ่นเหยียดหยามลดทอนศักดิ์ศรีความเป็นมนุษย์ โดยอาศัยมูลเหตุแห่งเพศและเพศวิถี</p>
+        </div>  
+      </div>
+      <div class = "item">
+        <div class = "content">
+          <h2>คุณเคยถามเพื่อนที่มาจากสามจังหวัดชายแดนภาคใต้ว่า ‘พกระเบิดมาไหม’ หรือไม่?</h2>
+        </div>  
+      </div>
+      <div class = "item">
+        <div class = "content">
+          <h2>แค่ล้อเล่นสนุกๆ เป็นเรื่องใหญ่ขนาดนั้นเลยหรือ?</h2>
+          <p> คำถามว่า ‘พกระเบิดมาไหม’ สะท้อนการเหมารวม และอคติทางศาสนา-ชาติพันธุ์ต่อคนจากพื้นที่จังหวัดชายแดนภาคใต้ทั้งหมดว่ามีแนวโน้มในการใช้ความรุนแรง</p>
+        </div>  
+      </div>
+      <div class = "item">
+        <div class = "content">
+          <h2>คุณเคยใช้สรรพนามแทนคนมลายู-มุสลิม (ในพื้นที่จังหวัดชายแดนภาคใต้) ว่า ‘แขก’ เพราะถือว่าเหมาะสมดีแล้วหรือไม่?</h2>
+        </div>  
+      </div>
+      <div class = "item">
+        <div class = "content">
+          <h2>การใช้สรรพนามที่เหมารวมเชื้อชาติเป็นปัญหาอย่างไร?</h2>
+          <p> คำว่า ‘แขก’ นั้นเป็นปัญหาเมื่อถูกนำมาใช้เรียกอย่างเหมารวมกับคนมุสลิมทั้งหมดในพื้นที่จังหวัด เพราะกลุ่มชาติพันธุ์ในชายแดนใต้คือกลุ่มมลายู และสำหรับคนมลายูมุสลิมในจังหวัดชายแดนภาคใต้ ‘แขก’ มักหมายถึงกลุ่มคนชาติพันธุ์หนึ่งที่อพยพมาจากประเทศปากีสถานหรืออินเดีย</p>
+          <p> ดังนั้นการเรียกคนมลายูว่า ‘แขก’ จึงสร้างความรู้สึก ถูกด้อยค่า ถูกทำให้เป็นอื่นในสังคมไทย และสร้างความเข้าใจผิดต่ออัตลักษณ์และชาติพันธุ์ของคนมลายู</p>
+        </div>  
+      </div>
+      <div class = "item">
+        <div class = "content">
+          <h2>คุณเคยแสดงความคิดเห็นต่อประเด็นทางสังคมใด ๆ โดยมีการลดทอนความเป็นมนุษย์ของผู้อื่นเช่นนี้หรือไม่?</h2>
+        </div>  
+      </div>
+      <div class = "item">
+        <div class = "content">
+          <h2>การวิจารณ์อย่างนึกสนุกส่งผลกระทบรุนแรงต่อผู้ฟังแค่ไหน?</h2>
+          <p> การแสดงความไม่พอใจหรือวิพากษ์วิจารณ์ในสังคมประชาธิปไตยไม่ควรผลักคนที่มีจุดยืนต่างกันออกจากสังคม แสดงความชิงชัง และความเป็นศัตรู</p>
+          <p> ถ้อยคำในตัวอย่างมีลักษณะของการเหยียดหยาม ลดทอนความเป็นมนุษย์ และส่งผลให้เกิดทัศนคติเชิงลบแบบเหมารวมต่อกลุ่มบุคคล</p>
+        </div>  
+      </div>
+      <div class = "item">
+        <div class = "content">
+          <h2>คุณเชื่อว่าการโพสต์ข้อความที่สนับสนุนให้ใช้ ความรุนแรง กวาดล้าง หรือกำจัดกลุ่มบุคคล บนฐานความต่างด้านใดก็ตาม เป็นเสรีภาพในการแสดงความเห็นในสังคมประชาธิปไตยหรือไม่?</h2>
+        </div>  
+      </div>
+      <div class = "item">
+        <div class = "content">
+          <h2>ขอบเขตของการแสดงความคิดเห็นบนพื้นฐานของเสรีภาพอยู่ไหน?</h2>
+          <p> มนุษย์ทุกคนมีสิทธิ และเสรีภาพในการแสดงความคิดเห็น (Freedom of Speech) ซึ่งเป็นพื้นฐานของระบอบประชาธิปไตย</p>
+          <p> อย่างไรก็ตามเสรีภาพในการแสดงความคิดเห็นต้องไม่กระทบสิทธิในการมีชีวิตอยู่ และสิทธิความปลอดภัยในเนื้อตัว และร่างกายอันพึงละเมิดมิได้ และเสรีภาพดังกล่าวยังไม่ได้รับการคุ้มครองภายใต้กฎหมายระหว่างประเทศ</p>
+        </div>  
+      </div>
+      <div class = "item">
+        <div class = "content">
+          <h1>Score: <span id="score">{{ score }}</span></h1>
+        </div>  
+      </div>
+    </div>
+  </div>
+
+  <div class = "arrows">
+    <form action="/increase_score" method="GET">
+      <button id = "next1" onclick="increaseScore()" >เคย</button>
+    </form>  
+    <button id = "next2">ไม่เคย</button>
+    <button id= "skipdescribe">ข้อถัดไป</button>
+</div>
+<!-- JavaScript -->
+  <!-- <div class="w3-display-left w3-text-white" style="padding:48px">
+
+    <span class="big w3-hide-small ">DANGEROUS SPEECH</span><br>
+    <span class="big w3-hide-small ">on Social Media</span><br>
+
+    <span class="w3-xxlarge w3-hide-large w3-hide-medium">มาทดสอบกันหน่อย</span><br>
+
+    <span style ="font-size:40px!important">คุณเป็นส่วนหนึ่งของการส่งต่อ Dangerous Speech หรือไม่?</span>
+
+    <p><a href="../quiz.html" class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off">เริ่มทำแบบทดสอบ</a></p> -->
+
+ 
+<!-- ----------------------------------------------------------------------------------------- -->
+
+<!-- JavaScript -->
+<script src = "E:\dangerousspeech\scriptquiz.js">
+</script>
+</body>
+</html>
