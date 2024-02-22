@@ -3,11 +3,9 @@ document.addEventListener("DOMContentLoaded", function() {
     let next = document.getElementById('next1');
     let next2 = document.getElementById('next2');
     let nextq = document.getElementById('skipdescribe');
-    let prev = document.querySelector('.prev');
-    let scoreElement = document.getElementById('score'); // Get the score element
-    let refreshInterval; // Declare the variable for the interval
-
-    // config param
+    // let prev = document.querySelector('.prev');
+    let scoreElement = document.getElementById('score');
+    let resultElement = document.getElementById('result'); // Get the result element
     let countItem = items.length;
     let itemActive = 0;
 
@@ -36,41 +34,43 @@ document.addEventListener("DOMContentLoaded", function() {
         itemActive += 1;
         showSlider();
     };    
+    // prev.onclick = function(){
+    //     itemActive -= 1;
+    //     if(itemActive < 0){
+    //         itemActive = countItem - 1;
+    //     }
+    //     showSlider();
+    // };
 
-    //event prev click
-    prev.onclick = function(){
-        itemActive -= 1;
-        if(itemActive < 0){
-            itemActive = countItem - 1;
+    class ScoreCounter {
+        constructor() {
+            this.score = 0;
         }
-        showSlider();
-    };
-
-    function increaseScore() {
-        // Make an AJAX request to increase the score
-        var xhr = new XMLHttpRequest();
-        xhr.open('GET', '/increase_score', true);
-        xhr.onreadystatechange = function() {
-            if (xhr.readyState === XMLHttpRequest.DONE) {
-                if (xhr.status === 200) {
-                    // Request was successful
-                    // You can update the UI if needed
-                    console.log('Score increased successfully');
-                } else {
-                    // Handle errors
-                    console.error('Error:', xhr.status);
-                }
-            }
-        };
-        xhr.send();
-    }
     
+        increaseScore() {
+            this.score += 1;
+        }
+    
+        getScore() {
+            return this.score;
+        }
+    
+        getResult() {
+            if (this.score === 0) {
+                return "ทำดีมาก! คุณไม่เคยส่งต่อ Dangerous Speech เลย";
+            } else if (this.score >= 1 && this.score <= 4) {
+                return "พยายามอีกนิด! คุณยังเผลอส่งต่อ Dangerous Speech อยู่บ้าง";
+            } else {
+                return "คุณเคยส่งต่อ ‘ถ้อยคำรุนแรง’ ในหลายประเด็นบนโลกออนไลน์";
+            }
+        }
+    }
+
+    const scoreCounter = new ScoreCounter();
+
     function showSlider(){
-        // remove item active old
         let itemActiveOld = document.querySelector('.quiz-slider .list .item.active');
         itemActiveOld.classList.remove('active');
-
-        // active new item
         items[itemActive].classList.add('active');
 
         // Update button visibility based on itemActive
@@ -80,40 +80,32 @@ document.addEventListener("DOMContentLoaded", function() {
             updateButtonVisibility(false, false, true);
         }
 
-        
         // Update the score if it's the last slide
         if (itemActive === countItem - 1) {
-            // Make an AJAX request to get the score from the server
-            var xhr = new XMLHttpRequest();
-            xhr.open('GET', '/increase_score', true);
-            xhr.onreadystatechange = function() {
-                if (xhr.readyState === XMLHttpRequest.DONE) {
-                    if (xhr.status === 200) {
-                        // Request was successful
-                        // Parse the response and update the score element
-                        var data = JSON.parse(xhr.responseText);
-                        scoreElement.textContent = data.score;
-                    } else {
-                        // Handle errors
-                        console.error('Error:', xhr.status);
-                    }
-                }
-            };
-            xhr.send();
+            // Update the score and result here if necessary
+            scoreElement.textContent = scoreCounter.getScore();
+            resultElement.textContent = scoreCounter.getResult();
         }
     }
-    document.addEventListener("DOMContentLoaded", function() {
-        let nextButton = document.getElementById('next1');
-        let scoreElement = document.getElementById('score'); // Get the score element
-    
-        // Event listener for the button click
-        nextButton.addEventListener('click', function(event) {
-            event.preventDefault(); // Prevent default form submission behavior
-            increaseScore(); // Call the function to increase the score
-        });
-    
-
+    document.getElementById('next1').addEventListener('click', function() {
+        scoreCounter.increaseScore();
+        scoreElement.textContent = scoreCounter.getScore();
+        resultElement.textContent = scoreCounter.getResult();
+        itemActive += 1;
+        showSlider();
     });
+
+    document.getElementById('next2').addEventListener('click', function() {
+        itemActive += 1;
+        showSlider();
+    });
+
+    document.getElementById('skipdescribe').addEventListener('click', function() {
+        itemActive += 1;
+        showSlider();
+    });
+
+
     // Start the slider initially
     showSlider();
 });
