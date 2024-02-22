@@ -23,29 +23,48 @@ document.addEventListener("DOMContentLoaded", function() {
     
     // event next click
     next.onclick = function(){
-        itemActive = itemActive + 1;
+        itemActive += 1;        
         showSlider();
     };
 
     next2.onclick = function(){
-        itemActive = itemActive + 1;
+        itemActive += 1;
         showSlider();
     };
 
     nextq.onclick = function(){
-        itemActive = itemActive + 1;
+        itemActive += 1;
         showSlider();
     };    
 
     //event prev click
     prev.onclick = function(){
-        itemActive = itemActive - 1;
+        itemActive -= 1;
         if(itemActive < 0){
             itemActive = countItem - 1;
         }
         showSlider();
     };
 
+    function increaseScore() {
+        // Make an AJAX request to increase the score
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', '/increase_score', true);
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                if (xhr.status === 200) {
+                    // Request was successful
+                    // You can update the UI if needed
+                    console.log('Score increased successfully');
+                } else {
+                    // Handle errors
+                    console.error('Error:', xhr.status);
+                }
+            }
+        };
+        xhr.send();
+    }
+    
     function showSlider(){
         // remove item active old
         let itemActiveOld = document.querySelector('.quiz-slider .list .item.active');
@@ -64,14 +83,37 @@ document.addEventListener("DOMContentLoaded", function() {
         
         // Update the score if it's the last slide
         if (itemActive === countItem - 1) {
-            // Get the score from the server and update the score element
-            fetch('/get_score')
-                .then(response => response.json())
-                .then(data => {
-                    scoreElement.textContent = data.score;
-                });
+            // Make an AJAX request to get the score from the server
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', '/increase_score', true);
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === XMLHttpRequest.DONE) {
+                    if (xhr.status === 200) {
+                        // Request was successful
+                        // Parse the response and update the score element
+                        var data = JSON.parse(xhr.responseText);
+                        scoreElement.textContent = data.score;
+                    } else {
+                        // Handle errors
+                        console.error('Error:', xhr.status);
+                    }
+                }
+            };
+            xhr.send();
+        }
     }
+    document.addEventListener("DOMContentLoaded", function() {
+        let nextButton = document.getElementById('next1');
+        let scoreElement = document.getElementById('score'); // Get the score element
+    
+        // Event listener for the button click
+        nextButton.addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent default form submission behavior
+            increaseScore(); // Call the function to increase the score
+        });
+    
 
+    });
     // Start the slider initially
     showSlider();
 });

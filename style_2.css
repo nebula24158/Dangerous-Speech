@@ -67,6 +67,10 @@ body, html {
     font-size: 40px;
     margin: 0;
 }
+.quiz-slider .list .item .content p{
+    font-size: 20px;
+    margin: 0;
+}
 .quiz-slider .list .item.active{
     opacity: 1;
     z-index: 10;
@@ -84,13 +88,13 @@ body, html {
     transform: translateY(30px);
     filter: blur(20px);
     opacity: 0;
-    animation: showContent .5s .7s ease-in-out 1 forwards;
+    animation: showContent .2s .3s ease-in-out 1 forwards;
 }
 .quiz-slider .list .item.active h2{
-    animation-delay: 1s;
+    animation-delay: 0.4s;
 }
 .quiz-slider .list .item.active p:nth-child(3){
-    animation-duration: 1.3s;
+    animation-duration: 0.6s;
 }
 .arrows{
     position: absolute;
@@ -99,7 +103,20 @@ body, html {
     z-index:100;
     display: inline-block;
 }
-#next1, #next2{
+#next1{
+    background-color: #ffffff;
+    border-color: #352bc5;
+    font-family: Kanit;
+    width: 80px;
+    height: 40px;
+    border-radius: 5px;
+    font-size: x-large;
+    color:#352bc5;
+    transition: .5s;
+    display: inline-block;
+    margin-right: 10px; /* Add margin between the buttons */
+}
+#next2{
     background-color: #ffffff;
     border-color: #352bc5;
     font-family: Kanit;

@@ -237,5 +237,36 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 .big{
     font-size: 90px!important;
     color: #113946!important;
-    font-family: "Black Ops One", Kanit!important;
+    font-family: "Russo One", Kanit!important;
+}
+.big-head{
+    font-size: 50px;
+    font-family: Mitr;
+    font-weight: Bold;
+}
+.header{
+    font-size: 30px;
+    font-family: Mitr;
+    font-weight: Medium;
+}
+.inside{
+    margin-top: 20px;
+    margin-left: 300px;
+    margin-right: 300px;
+}
+.red-text {
+    color: red!important;
+}
+
+.blue-text {
+    color: blue;
+}
+.main{
+    margin-top: 20px;
+}
+#about{
+    background-color: #E9E2D6;
+}
+.sub-head{
+    font-weight: 600;
 }
